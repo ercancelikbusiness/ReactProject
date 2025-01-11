@@ -1,25 +1,14 @@
-import React from 'react'
-import {
-  DropdownMenu,
-  DropdownItem,
-  MenuMenu,
-  MenuItem,
-  Button,
-  Dropdown,
-  Menu,
-  Container,
-} from 'semantic-ui-react'
-// dashboard'daki dropdown language kısmını buraya aldık languege kısmında sepet görünümü elde etmek için
+import React from 'react';
+import { Dropdown } from 'semantic-ui-react';
+
 export default function CartSummary() {
   return (
-    <div>
-       <Dropdown item text='Language'>
-              <DropdownMenu>
-                <DropdownItem>English</DropdownItem>
-                <DropdownItem>Russian</DropdownItem>
-                <DropdownItem>Spanish</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-    </div>
-  )
+    <Dropdown item text='Language'>
+      <Dropdown.Menu>
+        <Dropdown.Item>English</Dropdown.Item>
+        <Dropdown.Item>Russian</Dropdown.Item>
+        <Dropdown.Item>Spanish</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
 }

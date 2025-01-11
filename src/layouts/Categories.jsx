@@ -1,21 +1,18 @@
 import React from 'react'
-import { MenuItem, Menu } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 
 export default function Categories() {
   return (
     <div>
       <Menu pointing vertical>
-        <MenuItem
+        <Menu.Item
           name='home'
-        
         />
-        <MenuItem
+        <Menu.Item
           name='messages'
-         
         />
-        <MenuItem
+        <Menu.Item
           name='friends'
-          
         />
       </Menu>
     </div>

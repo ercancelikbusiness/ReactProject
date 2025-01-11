@@ -1,21 +1,17 @@
-import React , { useState} from 'react'
+import React, { useState } from 'react'
 import CartSummary from './CartSummary'
 import {
-  DropdownMenu,
-  DropdownItem,
-  MenuMenu,
-  MenuItem,
-  Button,
   Dropdown,
   Menu,
   Container,
+  Button,
 } from 'semantic-ui-react'
 import SignedOut from './SignedOut'
 import SignedIn from './SignedIn'
 
-// inverted fixed kısmında  sayfadaki home messages kisminin görünümünü ayarladık // container kısmını menü inverted'ide kapsayacak şekilde yapsaydık  langueges kısmı  sayfada ortalanmıyacaktı mesela   bu hazır kodları https://react.semantic-ui.com/ sitesinden
+// inverted fixed kısmında sayfadaki home messages kısmının görünümünü ayarladık. Container kısmını menü inverted'ı kapsayacak şekilde yapsaydık, language kısmı sayfada ortalanmayacaktı mesela. Bu hazır kodları https://react.semantic-ui.com/ sitesinden aldık
 export default function Navi() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true) // useState içindeki değer  {isAuthenticated?<SignedIn/>:<SignOut/>}  if'inde işimize yarıcak
+  const [isAuthenticated, setIsAuthenticated] = useState(true) // useState içindeki değer  {isAuthenticated?<SignedIn/>:<SignOut/>} if'inde işimize yarayacak
 
   function handleSignOut() {
     setIsAuthenticated(false)
@@ -29,18 +25,19 @@ export default function Navi() {
     <div>
       <Menu inverted fixed='top'>
         <Container>
-          <MenuItem
+          <Menu.Item
             name='home'
           />
-          <MenuItem
+          <Menu.Item
             name='messages'
           />
-          <MenuMenu position='right'>
+          <Menu.Menu position='right'>
             <CartSummary />
-            {isAuthenticated?<SignedIn signOut={handleSignOut} bisey="1"/>:<SignedOut signIn={handleSignIn}/>} 
-            
-            
-          </MenuMenu>
+            {isAuthenticated
+              ? <SignedIn signOut={handleSignOut} bisey="1" />
+              : <SignedOut signIn={handleSignIn} />
+            }
+          </Menu.Menu>
         </Container>
       </Menu>
     </div>
