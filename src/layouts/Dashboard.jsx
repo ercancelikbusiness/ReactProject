@@ -17,9 +17,9 @@ export default function Dashboard() {
           </Grid.Column>
           <Grid.Column width={12}>
             <Routes> //eskiden bu route imiş güncelleme ile routes olmuş
-             // Route path="/" // sadece / varsa tarayıcı url alanında devamında  ne olursa olsun  mesela productlisti açsın demek
+             // Route path="/" // sadece / varsa tarayıcı url alanında devamında  ne olursa olsun;  mesela productlisti açsın demek
              // örn: http://localhost:3000/products/asdwadsadawdasd
-             //aşağıda exact kullanmaya aslında gerek yok yeni güncelleme ile bu gereklilik kalktı aslında Component yerine element yazılmalı
+             //aşağıda exact kullanmaya aslında gerek yok yeni güncelleme ile bu gereklilik kalktı ayrıca aslında Component yerine element yazılmalı
 
              <Route exact path="/" Component={ProductList}/>
              <Route exact path="/products" Component={ProductList}/>

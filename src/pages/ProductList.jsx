@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import {
   Table,
-  TableRow,
-  TableHeaderCell,
-  TableHeader,
-  TableFooter,
-  TableCell,
-  TableBody,
   Menu,
-  Menu.Item,
   Icon,
 } from 'semantic-ui-react'
 import ProductService from '../services/productService'
+import { Link } from 'react-router-dom'
 
 export default function ProductList() {
   const [products, setProducts] = useState([])
@@ -24,31 +18,31 @@ export default function ProductList() {
   return (
     <div>
       <Table celled>
-        <TableHeader>
+        <Table.Header>
           <Table.Row>
-            <TableHeaderCell>Ürün Adı</TableHeaderCell>
-            <TableHeaderCell>Birim Fiyatı</TableHeaderCell>
-            <TableHeaderCell>Stok Adeti</TableHeaderCell>
-            <TableHeaderCell>Açıklama</TableHeaderCell>
-            <TableHeaderCell>Kategori</TableHeaderCell>
+            <Table.HeaderCell>Ürün Adı</Table.HeaderCell>
+            <Table.HeaderCell>Birim Fiyatı</Table.HeaderCell>
+            <Table.HeaderCell>Stok Adeti</Table.HeaderCell>
+            <Table.HeaderCell>Açıklama</Table.HeaderCell>
+            <Table.HeaderCell>Kategori</Table.HeaderCell>
           </Table.Row>
-        </TableHeader>
-
-        <TableBody>
+        </Table.Header>
+        
+        <Table.Body>
           {products.map(product => (
             <Table.Row key={product.id}>
-              <TableCell>{product.productName}</TableCell>
-              <TableCell>{product.unitPrice}</TableCell>
-              <TableCell>{product.unitsInStock}</TableCell>
-              <TableCell>{product.quantityPerUnit}</TableCell>
-              <TableCell>{product.category.categoryName}</TableCell>
+              <Table.Cell><Link to={`/products/${product.id}`}>{product.productName}</Link></Table.Cell> {/*//burdaki to ' dan sonraki yapıda localhost3000 yok ama sen web de bir ürüne tıkladığında örneğin sayfa url sinin http://localhost:3000/products/2 olma nedeni base url(localhost:3000 i kendi otomatik bilmesinden kaynaklı yani bunun devamını belirtiyorsun)*/}
+              <Table.Cell>{product.unitPrice}</Table.Cell>
+              <Table.Cell>{product.unitsInStock}</Table.Cell>
+              <Table.Cell>{product.quantityPerUnit}</Table.Cell>
+              <Table.Cell>{product.category.categoryName}</Table.Cell>
             </Table.Row>
           ))}
-        </TableBody>
+        </Table.Body>
 
-        <TableFooter>
+        <Table.Footer>
           <Table.Row>
-            <TableHeaderCell colSpan='5'>
+            <Table.HeaderCell colSpan='5'>
               <Menu floated='right' pagination>
                 <Menu.Item as='a' icon>
                   <Icon name='chevron left' />
@@ -61,9 +55,9 @@ export default function ProductList() {
                   <Icon name='chevron right' />
                 </Menu.Item>
               </Menu>
-            </TableHeaderCell>
+            </Table.HeaderCell>
           </Table.Row>
-        </TableFooter>
+        </Table.Footer>
       </Table>
     </div>
   )
