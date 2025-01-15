@@ -8,13 +8,18 @@ import {
 } from 'semantic-ui-react'
 import SignedOut from './SignedOut'
 import SignedIn from './SignedIn'
+import { useNavigate } from 'react-router-dom'
 
 // inverted fixed kısmında sayfadaki home messages kısmının görünümünü ayarladık. Container kısmını menü inverted'ı kapsayacak şekilde yapsaydık, language kısmı sayfada ortalanmayacaktı mesela. Bu hazır kodları https://react.semantic-ui.com/ sitesinden aldık
 export default function Navi() {
   const [isAuthenticated, setIsAuthenticated] = useState(true) // useState içindeki değer  {isAuthenticated?<SignedIn/>:<SignOut/>} if'inde işimize yarayacak
+  
+  const navigate = useNavigate();
 
   function handleSignOut() {
     setIsAuthenticated(false)
+    navigate("/") // yani kullanıcı çıkış yaptığında kullanıcıyı anasayfaya göndermeye yarıyor
+
   }
 
   function handleSignIn() {

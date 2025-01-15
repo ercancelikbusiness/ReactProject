@@ -31,8 +31,9 @@ export default function ProductList() {
         <Table.Body>
           {products.map(product => (
             <Table.Row key={product.id}>
-              <Table.Cell><Link to={`/products/${product.id}`}>{product.productName}</Link></Table.Cell> {/*//burdaki to ' dan sonraki yapıda localhost3000 yok ama sen web de bir ürüne tıkladığında örneğin sayfa url sinin http://localhost:3000/products/2 olma nedeni base url(localhost:3000 i kendi otomatik bilmesinden kaynaklı yani bunun devamını belirtiyorsun)*/}
-              <Table.Cell>{product.unitPrice}</Table.Cell>
+              {/*<Table.Cell><Link to={`/products/${product.id}`}>{product.productName}</Link></Table.Cell>*/} {/*//burdaki to ' dan sonraki yapıda localhost3000 yok ama sen web de bir ürüne tıkladığında örneğin sayfa url sinin http://localhost:3000/products/2 olma nedeni base url(localhost:3000 i kendi otomatik bilmesinden kaynaklı yani bunun devamını belirtiyorsun)*/}
+              <Table.Cell><Link to={`/products/${product.productName}`}>{product.productName}</Link></Table.Cell>
+              <Table.Cell>{product.unitPrice}</Table.Cell> {/*// ayrıca yukardaki koddaki productName tüm productların ismini temsil ediyor +"adw" yapsan tüm ürün isimlerinden sonra adw yazar kısaca bu yukardaki kod ürün isimlerini productname ile aldğı ve onları tıklanabilir link olmasını sağlıyor ve tıklandığında url de yazacak şeyin ne olacağını ifade ediyor */}
               <Table.Cell>{product.unitsInStock}</Table.Cell>
               <Table.Cell>{product.quantityPerUnit}</Table.Cell>
               <Table.Cell>{product.category.categoryName}</Table.Cell>
