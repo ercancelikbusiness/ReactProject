@@ -9,9 +9,11 @@ import {
 import SignedOut from './SignedOut'
 import SignedIn from './SignedIn'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 // inverted fixed kısmında sayfadaki home messages kısmının görünümünü ayarladık. Container kısmını menü inverted'ı kapsayacak şekilde yapsaydık, language kısmı sayfada ortalanmayacaktı mesela. Bu hazır kodları https://react.semantic-ui.com/ sitesinden aldık
 export default function Navi() {
+  const {cartItems} = useSelector(state => state.cart)
   const [isAuthenticated, setIsAuthenticated] = useState(true) // useState içindeki değer  {isAuthenticated?<SignedIn/>:<SignOut/>} if'inde işimize yarayacak
   
   const navigate = useNavigate();
@@ -37,7 +39,7 @@ export default function Navi() {
             name='messages'
           />
           <Menu.Menu position='right'>
-            <CartSummary />
+            {cartItems.length>0&&<CartSummary/>}
             {isAuthenticated
               ? <SignedIn signOut={handleSignOut} bisey="1" />
               : <SignedOut signIn={handleSignIn} />
