@@ -31,7 +31,7 @@ export default function ProductDetail() {
               src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
             />
             <Card.Header>{product.productName}</Card.Header> {/* ürüne tıklandığında başlıkta productname yazması için apiden getbyproductnameyi aldık*/}
-            <Card.Meta>{product.category.categoryName}</Card.Meta>
+            <Card.Meta>{product.category ? product.category.categoryName : 'Kategori yok'}</Card.Meta>
             <Card.Description>
               Steve wants to add you to the group <strong>best friends</strong>
             </Card.Description>
