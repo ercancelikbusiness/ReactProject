@@ -20,7 +20,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const handleAddProduct = () => {
-    navigate("/product/add");
+    navigate("/product/add"); //  daha sonra api ile bağlantı kurup  eklenen ürünleri api ile veritabanına aktarabiliriz henüz bu yapılmadı productAdd'de sadece ürün adı ve fiyat bilgisi var veritabanında daha fazla bilgi isteniyor idi bunu unutma
   };
 
   return (
