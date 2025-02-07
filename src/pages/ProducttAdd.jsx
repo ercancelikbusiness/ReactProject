@@ -4,7 +4,7 @@ import { Button, FormField } from "semantic-ui-react";
 import * as Yup from "yup";
 import ErcanTextInput from "../utilities/customFormControls/ErcanTextInput";
 
-export default function ProductAdd() {
+export default function ProducttAdd() {
   const initialValues = { productName: "", unitPrice: 10 };
   const schema = Yup.object({
     productName: Yup.string().required("Ürün adı Zorunlu"),
