@@ -42,9 +42,10 @@ export default function Dashboard() {
             <Routes> {/*//eskiden bu route imiş güncelleme ile routes olmuş*/}
              {/*// Route path="/" // sadece / varsa tarayıcı url alanında devamında  ne olursa olsun;  mesela productlisti açsın demek
              // örn: http://localhost:3000/products/asdwadsadawdasd
-             //aşağıda exact kullanmaya aslında gerek yok yeni güncelleme ile bu gereklilik kalktı ayrıca aslında Component yerine element yazılmalı*/}
+             //aşağıda exact kullanmaya aslında gerek yok yeni güncelleme ile bu gereklilik kalktı ayrıca aslında Component yerine element yazılmalı
+             // aşağıda ilk satırda  url http://localhost:3000 gidince ilk olarak ProductList sınıfı açılsın demişiz*/}
                
-             <Route exact path="/" Component={ProductList}/>
+             <Route exact path="/" Component={ProductList}/>    
              <Route exact path="/products" Component={ProductList}/>
              {/*<Route path="/products/:id" Component={ProductDetail}/>*/}
              {/*//burdaki :id ise products/ dan sonra 12 232 213123 gibi numara verirsen url ye onu acıcak demek . ayrıca :id dinamik bir ifadedirYani, URL'de /products/5 gibi bir adres olursa, id parametresi 5 olacak şekilde çalışır. ve bu  url yoluna gelen isteklerin productDetail bileşenine yönlendirilir*/}
