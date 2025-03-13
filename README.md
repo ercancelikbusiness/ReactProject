@@ -1,9 +1,10 @@
 # Detaylı Rehber
 Projenin tanıtımı ve genel açıklamalar ile Projeyi anlamak için 
 [Northwind Rehber PDF’sini indirin](https://github.com/ercancelikbusiness/ReactProject/raw/main/ReactProject_Rehber.pdf)
-
-
-
+<br>
+<br>
+<br>
+<br>
 
 ## Getting Started with Create React App
 
